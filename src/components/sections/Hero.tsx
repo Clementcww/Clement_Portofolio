@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Linkedin, Instagram } from 'lucide-react';
+import { ArrowRight, Github, Linkedin } from 'lucide-react';
 
 export function Hero() {
     return (
@@ -31,7 +31,7 @@ export function Hero() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="text-6xl md:text-8xl font-bold tracking-tight mb-6"
                 >
-                    Clement <span className="text-gray-600">Wibowo Widhianto.</span>
+                    Clement <span className="text-gray-600">Wibowo<br />Widhianto.</span>
                 </motion.h1>
 
                 <motion.p
@@ -40,32 +40,27 @@ export function Hero() {
                     transition={{ duration: 0.8, delay: 0.4 }}
                     className="text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed"
                 >
-                    Data Scientist & Developer. Transforming complex datasets into
+                    Data Scientist transforming complex datasets into
                     <span className="text-white font-medium"> intelligent insights</span> and
-                    <span className="text-white font-medium"> aesthetic interfaces</span>.
+                    <span className="text-white font-medium"> actionable intelligence</span>.
                 </motion.p>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.6 }}
-                    className="flex flex-col md:flex-row items-center justify-center gap-4"
+                    className="flex flex-wrap items-center justify-center gap-4"
                 >
                     <a href="#dash" className="group relative px-6 py-3 rounded-lg bg-white text-black font-semibold flex items-center gap-2 hover:bg-gray-200 transition-all">
                         View Dashboard
                         <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                     </a>
-                    <div className="flex items-center gap-4">
-                        <a href="https://github.com/Clementcww" target="_blank" className="p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-gray-400 hover:text-white print:hidden">
-                            <Github size={20} />
-                        </a>
-                        <a href="https://www.linkedin.com/in/clementcww" target="_blank" className="p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-gray-400 hover:text-white print:hidden">
-                            <Linkedin size={20} />
-                        </a>
-                        <a href="https://www.instagram.com/clementcww/" target="_blank" className="p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-gray-400 hover:text-white print:hidden">
-                            <Instagram size={20} />
-                        </a>
-                    </div>
+                    <a href="https://github.com/Clementcww" target="_blank" className="p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-gray-400 hover:text-white print:hidden">
+                        <Github size={20} />
+                    </a>
+                    <a href="https://www.linkedin.com/in/clementcww" target="_blank" className="p-3 rounded-lg bg-white/5 border border-white/10 hover:bg-white/10 transition-colors text-gray-400 hover:text-white print:hidden">
+                        <Linkedin size={20} />
+                    </a>
                 </motion.div>
             </div>
         </section>

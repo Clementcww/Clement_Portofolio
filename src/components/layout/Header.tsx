@@ -27,7 +27,7 @@ export function Header() {
             className={`fixed w-full z-50 top-0 transition-all duration-300 flex justify-center py-6`}
         >
             <nav className={`
-            flex items-center gap-1 px-2 py-2 rounded-full 
+            flex items-center gap-1 px-2 py-2 rounded-full
             ${scrolled ? 'bg-black/50 border border-white/10 backdrop-blur-xl shadow-lg' : 'bg-transparent'}
             transition-all duration-300
         `}>

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { GitFork, Star, Activity, Terminal, ExternalLink, Hash, Globe, MousePointerClick } from 'lucide-react';
+import { BarChart3, Terminal, ExternalLink, Hash, Globe, MousePointerClick } from 'lucide-react';
 import { UlasInPreview } from '@/components/ui/UlasInPreview';
 import { TaxiAnalyticsPreview } from '@/components/ui/TaxiAnalyticsPreview';
 import { TopicModelerPreview } from '@/components/ui/TopicModelerPreview';
@@ -10,6 +10,7 @@ import { EmailSpamPreview } from '@/components/ui/EmailSpamPreview';
 import { BandwidthPreview } from '@/components/ui/BandwidthPreview';
 import { TableauSalesPreview } from '@/components/ui/TableauSalesPreview';
 import { TableauQoLPreview } from '@/components/ui/TableauQoLPreview';
+import { CodeSnippetPreview } from '@/components/ui/CodeSnippetPreview';
 
 type Project = {
     id: number;
@@ -100,6 +101,39 @@ const projects: Project[] = [
         forks: 5,
         activity: "Low",
         link: "https://www.linkedin.com/in/clementcww",
+    },
+    {
+        id: 8,
+        title: "AXA Insurance Time Series Forecasting",
+        desc: "Insurance claim forecasting using XGBoost and time-series analysis.",
+        status: "Research",
+        lang: "Jupyter Notebook",
+        stars: 0,
+        forks: 0,
+        activity: "Low",
+        link: "https://github.com/Clementcww/AXA_Insurance_Time_Series_Forecasting",
+    },
+    {
+        id: 9,
+        title: "KYC Vision",
+        desc: "Computer vision pipeline for ID card quality assessment and field OCR.",
+        status: "Research",
+        lang: "Python",
+        stars: 0,
+        forks: 0,
+        activity: "Low",
+        link: "https://github.com/Clementcww/kyc-vision",
+    },
+    {
+        id: 10,
+        title: "Jakarta Air Quality Forecasting",
+        desc: "Time-series forecasting of air quality metrics across Jakarta.",
+        status: "Research",
+        lang: "Python",
+        stars: 0,
+        forks: 0,
+        activity: "Low",
+        link: "https://github.com/Clementcww/jakarta-air-quality-forecasting",
     }
 ];
 
@@ -129,6 +163,46 @@ export function Projects() {
             case 5: return <BandwidthPreview />;
             case 6: return <TableauSalesPreview />;
             case 7: return <TableauQoLPreview />;
+            case 8: return (
+                <CodeSnippetPreview
+                    title="AXA Insurance Forecasting"
+                    language="python"
+                    code={`# Time-series forecasting with XGBoost
+import xgboost as xgb
+from sklearn.preprocessing import RobustScaler
+
+model = xgb.XGBRegressor(max_depth=3, learning_rate=0.01)
+model.fit(X_train_lags, y_frequency)
+forecast = model.predict(X_test_lags)`}
+                />
+            );
+            case 9: return (
+                <CodeSnippetPreview
+                    title="KYC Vision"
+                    language="python"
+                    code={`# Computer vision pipeline for ID verification
+from kyc_vision import KYCPipeline
+import cv2
+
+pipeline = KYCPipeline()
+image = cv2.imread('id_card.jpg')
+report = pipeline.verify(image)
+print(report.json())`}
+                />
+            );
+            case 10: return (
+                <CodeSnippetPreview
+                    title="Air Quality Forecasting"
+                    language="python"
+                    code={`# Jakarta air quality prediction
+from statsmodels.tsa import seasonal_decompose
+import pandas as pd
+
+data = pd.read_csv('air_quality.csv')
+model = seasonal_decompose(data, period=365)
+forecast = model.predict(periods=30)`}
+                />
+            );
             default: return null;
         }
     };
@@ -139,10 +213,10 @@ export function Projects() {
                 <div className="flex flex-col md:flex-row justify-between items-end mb-12">
                     <div>
                         <h2 className="text-3xl font-bold flex items-center gap-3">
-                            <Activity className="text-blue-500" />
-                            Mission Control
+                            <BarChart3 className="text-blue-500" />
+                            Data Science Projects
                         </h2>
-                        <p className="text-gray-500 mt-2 font-mono text-sm">Reviewing active deployments and research nodes.</p>
+                        <p className="text-gray-500 mt-2 font-mono text-sm">Exploring data science, machine learning, and computer vision applications.</p>
                     </div>
                 </div>
 
@@ -190,12 +264,6 @@ export function Projects() {
                                                     <span className="flex items-center gap-2">
                                                         <div className="w-2 h-2 rounded-full bg-blue-400"></div>
                                                         {p.lang}
-                                                    </span>
-                                                    <span className="flex items-center gap-1">
-                                                        <Star size={14} /> {p.stars}
-                                                    </span>
-                                                    <span className="flex items-center gap-1">
-                                                        <GitFork size={14} /> {p.forks}
                                                     </span>
                                                 </div>
                                             </div>
@@ -257,8 +325,11 @@ export function Projects() {
                         })}
                     </AnimatePresence>
 
-                    <motion.div
+                    <motion.a
                         layout
+                        href="https://github.com/Clementcww"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="border border-dashed border-white/10 rounded-xl p-6 flex flex-col items-center justify-center text-center cursor-pointer hover:bg-white/5 transition-colors min-h-[250px]"
                     >
                         <div className="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center mb-4 text-gray-400">
@@ -266,7 +337,7 @@ export function Projects() {
                         </div>
                         <h3 className="font-bold text-gray-300">View All Repositories</h3>
                         <p className="text-xs text-gray-500 mt-2">Check Github for more</p>
-                    </motion.div>
+                    </motion.a>
                 </div>
             </div>
         </section>

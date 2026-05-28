@@ -19,16 +19,19 @@ export function About() {
                         transition={{ duration: 0.6 }}
                         className="relative"
                     >
-                        <div className="relative aspect-[3/4] w-full max-w-md mx-auto rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
+                        <div className="relative aspect-[3/4] w-full max-w-md mx-auto rounded-[20px] overflow-hidden grayscale hover:grayscale-0 transition-all duration-500">
                             <Image
                                 src="/profile.jpg"
                                 alt="Clement Wibowo Widhianto"
                                 fill
+                                sizes="(max-width: 768px) 100vw, 380px"
                                 className="object-cover"
                             />
 
-                            {/* Overlay Gradient */}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+                            <div
+                                className="absolute inset-0 opacity-60 pointer-events-none"
+                                style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 65%, transparent 100%)' }}
+                            />
                         </div>
 
                         {/* Decorative Elements */}
@@ -53,11 +56,11 @@ export function About() {
 
                         <div className="relative">
                             <Quote className="absolute -top-4 -left-6 text-white/5 transform -scale-x-100" size={64} />
-                            <p className="text-gray-300 text-lg leading-relaxed relative z-10">
-                                I'm a <span className="text-white font-medium">Data Science visionary</span> studying at Universitas Bunda Mulia, dedicated to breathing life into dormant datasets. I thrive in the intersection of analytics and artistry, weaving complex numbers into compelling narratives.
+                            <p className="text-gray-300 text-lg leading-relaxed text-justify relative z-10">
+                                I&apos;m a <span className="text-white font-medium">Data Science student</span> at Universitas Bunda Mulia, driven by the conviction that data tells stories worth hearing. I specialize in extracting signal from noise, turning ambiguous datasets into clarity, insights, and measurable impact through rigorous analysis and machine learning.
                             </p>
-                            <p className="text-gray-300 text-lg leading-relaxed relative z-10 mt-6">
-                                My philosophy revolves around <span className="text-blue-400">digital alchemy</span>—transforming raw, chaotic information into polished, actionable intelligence. I build dynamic models that don't just predict trends, but empower innovative solutions.
+                            <p className="text-gray-300 text-lg leading-relaxed text-justify relative z-10 mt-6">
+                                My work bridges <span className="text-blue-400">statistical rigor and practical innovation</span>. Whether building predictive models, uncovering hidden patterns, or designing systems that learn and adapt, I&apos;m committed to solutions that don&apos;t just answer questions; they unlock new possibilities.
                             </p>
                         </div>
 
