@@ -14,7 +14,7 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Clement Wibowo Widhianto | Portfolio",
-  description: "Data Science Student & Developer Portfolio",
+  description: "Data Science Student",
 };
 
 export default function RootLayout({
