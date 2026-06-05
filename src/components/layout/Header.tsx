@@ -2,12 +2,13 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { GitBranch, User, Code, Mail } from 'lucide-react';
+import { GitBranch, User, Code, Mail, Award } from 'lucide-react';
 
 const navItems = [
     { name: 'Home', href: '#home', icon: User },
     { name: 'Dashboard', href: '#dash', icon: GitBranch },
     { name: 'About', href: '#about', icon: Code },
+    { name: 'Certifications', href: '#certifications', icon: Award },
     { name: 'Contact', href: '#contact', icon: Mail },
 ];
 
